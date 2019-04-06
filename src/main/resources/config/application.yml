@@ -1,0 +1,39 @@
+server:
+  port: 8087
+
+spring:
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/licenta_db?verifyServerCertificate=false&useSSL=true
+    username: root
+    password: parola
+    initialize: true
+    driver-class-name: com.mysql.jdbc.Driver
+    initialization-mode: always
+  jpa:
+    database: mysql
+    show-sql: false
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      ddl-auto: none
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+      hibernate.format_sql: true
+
+application:
+  security:
+    jwt:
+      secret: otherpeopledontknowit
+      expiration: 86400000
+
+dba:
+  roles:
+    - ROLE_ADMIN
+    - ROLE_USER

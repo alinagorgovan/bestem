@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Administrare bloc</title>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Cornita Nicusor-Razvan"/>
+        <meta name="keywords" content="HTML,CSS"/>
+        <meta name="description" content="administrare bloc"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            p {
+                padding: 10px;
+                text-align: center;
+                letter-spacing: 3px;
+            }
+
+            p.sansserif {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            footer {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 1rem;
+                background-color: #efefef;
+                text-align: center;
+            }
+
+            img {
+                margin: 15px;
+                padding: 15px;
+            }
+
+            h2 {
+                font-family: "Playfair Display";
+                letter-spacing: 5px;
+            }
+
+            h3 {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: red;
+                position: relative;
+                -webkit-animation-name: example;
+                -webkit-animation-duration: 2s;
+                -webkit-animation-iteration-count: infinite;
+                animation-name: example;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            @-webkit-keyframes example {
+                0%   {background-color:red; left:0%}
+                50%  {background-color:blue; left:50%}
+                100% {background-color:red; left:0%}
+            }
+
+            @keyframes example {
+                0%   {background-color:red; left:0%;}
+                50%  {background-color:blue; left:50%}
+                100% {background-color:red; left:0%}
+            }
+
+            h4 {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: red;
+                position: relative;
+                -webkit-animation-name: example;
+                -webkit-animation-duration: 2s;
+                -webkit-animation-iteration-count: infinite;
+                animation-name: example;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            @-webkit-keyframes example {
+                0%   {background-color:red; left:50%}
+                50%  {background-color:blue; left:98%}
+                100% {background-color:red; left:50%}
+            }
+
+            @keyframes example {
+                0%   {background-color:red; left:50%;}
+                50%  {background-color:blue; left:98%}
+                100% {background-color:red; left:50%}
+            }
+
+            h5 {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: red;
+                position: relative;
+                -webkit-animation-name: example;
+                -webkit-animation-duration: 2s;
+                -webkit-animation-iteration-count: infinite;
+                animation-name: example;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            @-webkit-keyframes example {
+                0%   {background-color:red; left:0%}
+                50%  {background-color:blue; left:98%}
+                100% {background-color:red; left:0%}
+            }
+
+            @keyframes example {
+                0%   {background-color:red; left:0%;}
+                50%  {background-color:blue; left:98%}
+                100% {background-color:red; left:0%}
+            }
+
+        </style>
+    </head>
+
+    <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Blocuri</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blocuri <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Bloc 1</a></li>
+                            <li><a href="#">Bloc 2</a></li>
+                            <li><a href="#">Bloc 3</a></li>
+                            <li><a href="#">Bloc 4</a></li>
+                            <li><a href="#">Bloc 5</a></li>
+                            <li><a href="#">Bloc 6</a></li>
+                            <li><a href="#">Bloc 7</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sectoare <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Sectorul 1</a></li>
+                            <li><a href="#">Sectorul 2</a></li>
+                            <li><a href="#">Sectorul 3</a></li>
+                            <li><a href="#">Sectorul 4</a></li>
+                            <li><a href="#">Sectorul 5</a></li>
+                            <li><a href="#">Sectorul 6</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contul meu <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/">Logheaza-te</a></li>
+                    <li><a href="/register">Inregistreaza-te</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <footer>
+        <h6>Copyright &copy; 2019 Administrare Bloc. All rights reserved.</h6>
+    </footer>
+    </body>
+
+    <script src="/js/lib/angular.min.js"></script>
+    <script src="/js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="/js/app/app.js"></script>
+    <script src="/js/app/UserController.js"></script>
+    <script src="/js/app/UserService.js"></script>
+    <link rel="stylesheet" href="/css/lib/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/app/app.css"/>
+</html>
