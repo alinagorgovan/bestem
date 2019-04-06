@@ -140,7 +140,6 @@ header h1 {
   }
   .cd-faq-categories a {
     font-size: 13px;
-    font-size: 0.8125rem;
     font-weight: 600;
     padding-left: 24px;
     padding: 0 24px;
@@ -336,9 +335,8 @@ header h1 {
 .cd-faq-group .cd-faq-title h2 {
   text-transform: uppercase;
   font-size: 12px;
-  font-size: 0.75rem;
   font-weight: 700;
-  color: #bbbbc7;
+  color: #000000;
 }
 .no-js .cd-faq-group {
   display: block;
@@ -431,7 +429,6 @@ header h1 {
 
 .cd-faq-content p {
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 1.4;
   color: #6c7d8e;
 }
