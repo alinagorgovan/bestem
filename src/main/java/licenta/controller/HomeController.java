@@ -24,6 +24,11 @@ public class HomeController {
         return "register";
     }
 
+    @GetMapping(value = "/info")
+    public String info() {
+        return "info";
+    }
+
 //    @GetMapping(value = "/merge")
 //    public String redirectEverythingOtherThanTest(){
 //        return "redirect:/loginPage";
