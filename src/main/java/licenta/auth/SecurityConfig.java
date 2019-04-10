@@ -1,5 +1,6 @@
 package licenta.auth;
 
+import licenta.mail.EmailService;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -51,6 +54,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public JwtAuthenticationFilter authenticationTokenFilterBean() {
         return new JwtAuthenticationFilter();
     }
+
+    @Bean
+    public EmailService emailServiceBean() {
+        return new EmailService();
+    }
+
+    @Bean
+    public JavaMailSender javaMailSenderBean() { return new JavaMailSenderImpl();}
 
     @Bean
     public PasswordEncoder passwordEncoder() {
