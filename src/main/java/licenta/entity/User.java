@@ -17,9 +17,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String locale;
-
     public User() {
     }
 
@@ -30,12 +27,6 @@ public class User {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-    }
-
-    public User(String username, String password, String locale) {
-        this.username = username;
-        this.password = password;
-        this.locale = locale;
     }
 
     public int getId() {
@@ -61,8 +52,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public String getLocale() { return locale; }
-
-    public void setLocale(String locale) { this.locale = locale; }
 }

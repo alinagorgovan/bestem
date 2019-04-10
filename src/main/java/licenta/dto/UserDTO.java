@@ -1,9 +1,9 @@
 package licenta.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 public class UserDTO {
 
@@ -17,21 +17,17 @@ public class UserDTO {
     @NotNull
     private String password;
 
-    @JsonProperty("locale")
-    @NotNull
-    private String locale;
-
-    @JsonProperty("roles")
-    private List<String> roles;
+    @JsonProperty("role")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String role;
 
     public UserDTO() {
     }
 
-    public UserDTO(String username, String password, String locale, List<String> roles) {
+    public UserDTO(String username, String password, String role) {
         this.username = username;
         this.password = password;
-        this.locale = locale;
-        this.roles = roles;
+        this.role = role;
     }
 
     public String getUserName() { return username; }
@@ -42,16 +38,12 @@ public class UserDTO {
 
     public void setPassword(String password) { this.password = password; }
 
-    public String getLocale() { return locale; }
-
-    public void setLocale(String local) { this.locale = local; }
-
     public Long getId() { return id; }
 
     public void setId(Long id) { this.id = id; }
 
-    public List<String> getRoles() { return roles; }
+    public String getRole() { return role; }
 
-    public void setRoles(List<String> roles) { this.roles = roles; }
+    public void setRole(String role) { this.role = role; }
 }
 

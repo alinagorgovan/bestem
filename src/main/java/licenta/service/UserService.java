@@ -1,14 +1,15 @@
 package licenta.service;
 
 import licenta.dto.UserDTO;
+import licenta.entity.User;
 
 import java.util.List;
 
 public interface UserService {
 
-    UserDTO getUserById(Integer userId);
-
     void saveUser(UserDTO userDto);
 
-    List<UserDTO> getAllUsers();
+    List<User> getAllUsers();
+
+    UserDTO getUserFromDb(String email);
 }

@@ -1,16 +1,16 @@
 package licenta.auth;
 
-import licenta.dto.UserDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import licenta.dto.UserDTO;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class UserPrincipal implements UserDetails {
     private Long id;
@@ -23,32 +23,21 @@ public class UserPrincipal implements UserDetails {
     @NotNull
     private String password;
 
-    @JsonProperty("locale")
-    @NotNull
-    private String locale;
-
-    @JsonProperty("description")
-    @NotNull
-    private String description;
-
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserPrincipal(Long id, String username, String password, String locale,
+    private  UserPrincipal(Long id, String username, String password,
                          Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.locale = locale;
-        this.description = description;
         this.authorities = authorities;
     }
 
     public static UserPrincipal create(UserDTO userDTO) {
-        List<GrantedAuthority> authorities = userDTO.getRoles().stream()
-                .map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+        List<GrantedAuthority> authorities = Collections.singletonList(new
+                SimpleGrantedAuthority(userDTO.getRole()));
 
-        return new UserPrincipal(userDTO.getId(), userDTO.getUserName(), userDTO.getPassword(),
-                userDTO.getLocale(), authorities);
+        return new UserPrincipal(userDTO.getId(), userDTO.getUserName(), userDTO.getPassword(), authorities);
     }
 
     public Long getId() { return id; }
@@ -58,8 +47,6 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public String getPassword() { return password; }
-
-    public String getLocale() { return locale; }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() { return authorities; }

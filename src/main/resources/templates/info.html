@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'/>
+
+	<link rel="stylesheet" href="/css/reset.css"/> <!-- CSS reset -->
+	<link rel="stylesheet" href="/css/style.css"/> <!-- Resource style -->
+	<link rel="stylesheet" href="/css/app/app.css"/>
+	<link rel="stylesheet" href="/css/lib/bootstrap.min.css"/>
+	<script src="/js/lib/modernizr.js"></script> <!-- Modernizr -->
+	<title>FAQ Template | CodyHouse</title>
+	<style>
+		body{
+			background-color: #F3F3F5;
+		}
+		p {
+			padding: 10px;
+			text-align: center;
+			letter-spacing: 3px;
+		}
+
+		p.sansserif {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		footer {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			padding: 1rem;
+			background-color: #efefef;
+			text-align: center;
+		}
+
+		img {
+			margin: 15px;
+			padding: 15px;
+		}
+
+		h2 {
+			font-family: "Playfair Display";
+			letter-spacing: 5px;
+		}
+
+		h3 {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: red;
+			position: relative;
+			-webkit-animation-name: example;
+			-webkit-animation-duration: 2s;
+			-webkit-animation-iteration-count: infinite;
+			animation-name: example;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+		}
+
+		@-webkit-keyframes example {
+			0%   {background-color:red; left:0%}
+			50%  {background-color:blue; left:50%}
+			100% {background-color:red; left:0%}
+		}
+
+		@keyframes example {
+			0%   {background-color:red; left:0%;}
+			50%  {background-color:blue; left:50%}
+			100% {background-color:red; left:0%}
+		}
+
+		h4 {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: red;
+			position: relative;
+			-webkit-animation-name: example;
+			-webkit-animation-duration: 2s;
+			-webkit-animation-iteration-count: infinite;
+			animation-name: example;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+		}
+
+		@-webkit-keyframes example {
+			0%   {background-color:red; left:50%}
+			50%  {background-color:blue; left:98%}
+			100% {background-color:red; left:50%}
+		}
+
+		@keyframes example {
+			0%   {background-color:red; left:50%;}
+			50%  {background-color:blue; left:98%}
+			100% {background-color:red; left:50%}
+		}
+
+		h5 {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: red;
+			position: relative;
+			-webkit-animation-name: example;
+			-webkit-animation-duration: 2s;
+			-webkit-animation-iteration-count: infinite;
+			animation-name: example;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+		}
+
+		@-webkit-keyframes example {
+			0%   {background-color:red; left:0%}
+			50%  {background-color:blue; left:98%}
+			100% {background-color:red; left:0%}
+		}
+
+		@keyframes example {
+			0%   {background-color:red; left:0%;}
+			50%  {background-color:blue; left:98%}
+			100% {background-color:red; left:0%}
+		}
+
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/loggedIn/home">Blocuri</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blocuri <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Bloc 1</a></li>
+						<li><a href="#">Bloc 2</a></li>
+						<li><a href="#">Bloc 3</a></li>
+						<li><a href="#">Bloc 4</a></li>
+						<li><a href="#">Bloc 5</a></li>
+						<li><a href="#">Bloc 6</a></li>
+						<li><a href="#">Bloc 7</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sectoare <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Sectorul 1</a></li>
+						<li><a href="#">Sectorul 2</a></li>
+						<li><a href="#">Sectorul 3</a></li>
+						<li><a href="#">Sectorul 4</a></li>
+						<li><a href="#">Sectorul 5</a></li>
+						<li><a href="#">Sectorul 6</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/loggedIn/info">FAQ</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contul meu <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="/logout">Log Out</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<section class="cd-faq">
+	<ul class="cd-faq-categories">
+		<li><a class="selected" href="#recycling">General info</a></li>
+		<li><a href="#benefits">Benefits</a></li>
+		<li><a href="#facts">Facts</a></li>
+		<li><a href="#categories">Categories</a></li>
+	</ul>
+
+	<div class="cd-faq-items">
+		<ul id="recycling" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Why is recycling important</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What Exactly Is Recycling?</a>
+				<div class="cd-faq-content">
+					<p>Recycling basically involves turning used materials that are labeled as recyclable over to your local waste facility designated in a disposal container as “recyclable” materials to be taken and reused as material for a new purpose. A recyclable product is turned back into a raw form that can be used to create a new and different product. Not only are natural resources limited, but recycling efforts can significantly reduce additional waste that will not only harm the planet today, but future generations as well. The natural resources on our planet earth are limited so we must make the most to conserve, recycle and reuse whenever possible.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What Can I Recycle?</a>
+				<div class="cd-faq-content">
+					<p>What you can recycle depends on your area, not all materials may be recyclable. Check with your local recycle center to find out what you can and cannot recycle. You’ll notice that recyclable products are labeled with numbers from 1 to 7, 1 being the most recyclable, and 7 being the least recyclable. Also check with your city to make sure that you have the correct disposal containers available to ensure your efforts are being put to good use and heading to the recycling center rather than the landfill you are working so hard to avoid!</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+		</ul> <!-- cd-faq-group -->
+
+		<ul id="benefits" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Benefits of RECYCLING</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Recycling Conserves Resources</a>
+				<div class="cd-faq-content">
+					<p>When we recycle, used materials are converted into new products, reducing the need to consume natural resources. If used materials are not recycled, new products are made by extracting fresh, raw material from the Earth, through mining and forestry. Recycling helps conserve important raw materials and protects natural habitats for the future.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">Recycling saves energy</a>
+				<div class="cd-faq-content">
+					<p>Using recycled materials in the manufacturing process uses considerably less energy than that required for producing new products from raw materials – even when comparing all associated costs including transport etc. Plus there are extra energy savings because more energy is required to extract, refine, transport and process raw materials ready for industry compared with providing industry-ready materials.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">Recycling helps protect the environment</a>
+				<div class="cd-faq-content">
+					<p>Recycling reduces the need for extracting (mining, quarrying and logging), refining and processing raw materials all of which create substantial air and water pollution. As recycling saves energy it also reduces greenhouse gas emissions, which helps to tackle climate change. Current UK recycling is estimated to save more than 18 million tonnes of CO2 a year – the equivalent to taking 5 million cars off the road.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+		</ul> <!-- cd-faq-group -->
+
+		<ul id="facts" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Interesting facts about Recycling</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">FACT 1</a>
+				<div class="cd-faq-content">
+					<p>If you throw away your aluminium cans, they can stay in that can form for up to 500 years or more- so recycling is the way to go.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">FACT 2</a>
+				<div class="cd-faq-content">
+					<p>Half a million trees have to be cut down just to produce the Sunday newspapers each week.</p>
+				</div>
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">FACT 3</a>
+				<div class="cd-faq-content">
+					<p>2000 pounds of recycled paper can actually help to save 17 trees, over 350 gallons of oil, and a lot of landfill space. That also means less air pollution!</p>
+				</div>
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">FACT 4</a>
+				<div class="cd-faq-content">
+					<p>Americans will use over 2 and a half million plastic bottles every thirty minutes, and most of them are simply thrown away rather than recycled.</p>
+				</div>
+			</li>
+		</ul>
+		<ul id="categories" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Categories of recycling</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">PLASTIC BAGS</a>
+				<div class="cd-faq-content">
+					<p>Plastic bags, much like plastic lids, can contaminate other materials in the recycling process. It gets stuck between cardboard or stacks of paper, or it gets caught on the gears of recycling sorting machinery, causing the system to fail. Supermarkets however, are able to keep those materials bundled together by collecting just plastic bags and film. They also have the transportation infrastructure already in place. To avoid transporting empty containers, many supermarkets will recycle cardboard, plastic bags, wood pallets and sometime even food just so they don’t have to drive empty trucks back to the distributor.</p>
+				</div>
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">BATTERIES</a>
+				<div class="cd-faq-content">
+					<p>Alkaline household AA and AAA batteries can go straight in to the trash now.  They no longer contain items that are toxic or sought after for recycling into new material.  Rechargable batteries however are widely recyclable – find a listing of locations on our Find a Recycler or Reuser database.  And then begin replacing your disposable batteries with rechargable ones!</p>
+				</div>
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">PLASTIC CUPS </a>
+				<div class="cd-faq-content">
+					<p>plastic cups are not recyclable.  However, many local event organizers now use compostable cups that can be commercially composted.  These look just like plastic cups, so look on the bottom of the cup to see if it reads “COMPOSTABLE” and then head to your nearest Zero Waste Station to make sure the cups get in the right bin.  Compostable cups cannot be recycled and they will not break down in a home compost bin, so make sure they make it into a commercial composting bin if there is one available at the event.</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<a href="#0" class="cd-close-panel">Close</a>
+</section>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script src="/js/lib/jquery-2.1.1.js"></script>
+<script src="/js/app/info.js"></script>
+<script src="/js/lib/angular.min.js"></script>
+<script src="/js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="/js/app/app.js"></script>
+
+<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="/vendor/bootstrap/js/popper.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/select2/select2.min.js"></script>
+</body>
+</html>

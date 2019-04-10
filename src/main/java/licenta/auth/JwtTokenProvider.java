@@ -1,8 +1,10 @@
 package licenta.auth;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
@@ -19,43 +21,52 @@ public class JwtTokenProvider implements Serializable {
     private static final long serialVersionUID = 1L;
     static final Logger logger = LoggerFactory.getLogger(JwtTokenProvider.class);
 
-    private String jwtSecret = "JWTSuperSecretKey";
-
-    private int jwtExpirationInMs = 604800000;
+    @Autowired
+    JwtAuthenticationConfig jwtConfig;
 
     public String generateToken(Authentication authentication) {
 
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
 
         Date now = new Date();
-        Date expiryDate = new Date(now.getTime() + jwtExpirationInMs);
+        Date expiryDate = new Date(now.getTime() + jwtConfig.getExpiration());
 
         Claims claims = Jwts.claims().setSubject(userPrincipal.getUsername());
         List<SimpleGrantedAuthority> authorities = new ArrayList(userPrincipal.getAuthorities());
         claims.put("authorities", authorities.stream().map(SimpleGrantedAuthority::getAuthority)
                 .collect(Collectors.toList()));
-        claims.put("locale", userPrincipal.getLocale());
 
         return Jwts.builder()
                 .setClaims(claims)
                 .setIssuedAt(new Date())
                 .setExpiration(expiryDate)
-                .signWith(SignatureAlgorithm.HS512, jwtSecret)
+                .signWith(SignatureAlgorithm.HS512, jwtConfig.getSecret())
                 .compact();
     }
 
     public String getUserNameFromJWT(String token) {
         Claims claims = Jwts.parser()
-                .setSigningKey(jwtSecret)
+                .setSigningKey(jwtConfig.getSecret())
                 .parseClaimsJws(token)
                 .getBody();
 
         return claims.getSubject();
     }
 
+    public List<String> getRolesFromJWT(String token) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        Claims claims = Jwts.parser()
+                .setSigningKey(jwtConfig.getSecret())
+                .parseClaimsJws(token)
+                .getBody();
+
+        return objectMapper.convertValue(claims.get("authorities"),
+                objectMapper.getTypeFactory().constructCollectionType(List.class,String.class));
+    }
+
     public boolean validateToken(String authToken) {
         try {
-            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
+            Jwts.parser().setSigningKey(jwtConfig.getSecret()).parseClaimsJws(authToken);
             return true;
         } catch (SignatureException ex) {
             logger.error("Invalid JWT signature");
